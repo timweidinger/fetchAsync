@@ -7,6 +7,10 @@ const PORT = 3000;
 
 app.use(express.json());
 
+app.use('/harmodevs', () => console.log('middleware will be here'))
+app.use('/harmodevs/name', () => console.log('middleware will be here'))
+app.use('/cool_stuff', () => console.log('middleware will be here'))
+
 app.use((req, res) => {
   console.log('catch-all hit');
   res.sendStatus(404);
