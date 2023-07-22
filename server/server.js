@@ -2,14 +2,17 @@ const path = require('path');
 
 const express = require('express');
 
+const harmodevsRoutes = require('./routes/harmodevsRoutes');
+
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 
-app.use('/harmodevs', () => console.log('middleware will be here'))
+app.use('/harmodevs', harmodevsRoutes)
 app.use('/harmodevs/name', () => console.log('middleware will be here'))
 app.use('/cool_stuff', () => console.log('middleware will be here'))
+app.use('/users', () => console.log('middleware will be here'))
 
 app.use((req, res) => {
   console.log('catch-all hit');

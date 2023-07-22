@@ -20,6 +20,12 @@ function AsyncCall() {
     getCoolStuff();
   }, []);
 
+  useEffect(() => {
+    fetch("http://localhost:3000/harmodevious")
+      .then((res) => res.json())
+      .then((list) => setHarmodevs(list));
+  }, []);
+
   return <div>AsyncCall</div>;
 }
 
